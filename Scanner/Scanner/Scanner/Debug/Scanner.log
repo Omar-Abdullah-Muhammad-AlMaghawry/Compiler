@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\College\4th Comp. and Sys\1st Term\System Software (Compiler)\Projects\Scanner\Scanner\Source.cpp(29,12): warning C4101: 'type': unreferenced local variable
+D:\College\4th Comp. and Sys\1st Term\System Software (Compiler)\Projects\Scanner\Scanner\Source.cpp(302,20): warning C4018: '<': signed/unsigned mismatch
+  Scanner.vcxproj -> D:\College\4th Comp. and Sys\1st Term\System Software (Compiler)\Projects\Scanner\Debug\Scanner.exe
