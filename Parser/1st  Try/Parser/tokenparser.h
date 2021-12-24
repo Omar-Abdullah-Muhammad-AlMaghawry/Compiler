@@ -5,6 +5,7 @@
 #include "queue"
 #include "node.h"
 
-queue<TockenRecord> parseScannerOutput(string code);
+extern queue<TockenRecord> tokenQueue;
+void parseScannerOutput(string code);
 
 #endif

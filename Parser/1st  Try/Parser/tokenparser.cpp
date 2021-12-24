@@ -1,6 +1,8 @@
 #include "tokenparser.h"
 
-queue<TockenRecord> parseScannerOutput(string code){
+queue<TockenRecord> tokenQueue;
+
+void parseScannerOutput(string code){
 	queue<TockenRecord> res;
 	TockenRecord temp;
 	string tempType = "";
@@ -42,4 +44,6 @@ queue<TockenRecord> parseScannerOutput(string code){
 		
 		res.push(temp);
 	}
+
+	tokenQueue = res;
 }
