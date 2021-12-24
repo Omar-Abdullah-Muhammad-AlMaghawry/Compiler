@@ -3,11 +3,12 @@
 
 #include "string"
 #include "string.h"
-#include "vector"
+#include "deque"
+#include "mainwindow.h"
 using namespace std;
 typedef enum {
-    stmt, exp
-} type ;
+    stmt, expr
+} Type ;
 typedef enum {
     IF, THEN, ELSE , END, REPEAT, UNTIL,
     READ, WRITE,
@@ -26,23 +27,34 @@ typedef struct {
 typedef struct {
     int x;
     int y;
-} position ;
+} Position ;
 //typedef stuct ;
 
 class Node
 {
 private:
-    type nodeType;
+    Type nodeType;
     TockenRecord nodeRecord;
-    vector<Node * > *  childern = new vector<Node * >();
+    deque<Node * > *  childern = new deque<Node * >();
     Node * myBro= new Node(); //pointer to the next sibling
-    position pos;
+    Position pos;
 
 public:
     Node();
-    type getNodeType();
-    TockenRecord getNodeRecord();
-    void drawNode();
+    Node(Type type, TockenRecord tockenRecord, deque<Node * > *  childern,Position pos);
+    Node(Type type, TockenRecord tockenRecord, Position pos);
+
+    void setType(Type type);
+    void setTockenRecord(TockenRecord tockenRecord);
+    void setChild(Node * child);
+    void setMyBro(Node * bro);
+    void setPos(Position p);
+    Type getType();
+    TockenRecord getTockenRecord();
+    Node *getChild();
+    Node *getMyBro();
+    Position getPos(); 
+    void drawNode(Node * node);
 };
 
 #endif // NODE_H

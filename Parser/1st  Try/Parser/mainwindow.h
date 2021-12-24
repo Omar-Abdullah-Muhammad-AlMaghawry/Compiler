@@ -22,9 +22,17 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    void paintEvent(QPaintEvent * );
+    void drawRec(int x, int y,int width,int hight,QColor color,QColor outterColor,QString seq);
     ~MainWindow();
-
+signals:
+public slots:void click_fn();
 private:
     Ui::MainWindow *ui;
+    QPushButton * b ;
+    QVBoxLayout * l ;
+    QPainter * paint;
+    QLabel * label;
+    QPen pen;
 };
 #endif // MAINWINDOW_H
