@@ -58,8 +58,6 @@ public:
     Node *getMyBro();
     Position getPos(); 
     void drawNode(Node * node);
-
-    void
 };
 
 #endif // NODE_H
