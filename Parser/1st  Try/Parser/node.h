@@ -29,7 +29,7 @@ typedef struct {
     int y;
 } Position ;
 //typedef stuct ;
-
+extern Position posN ;
 class Node
 {
 private:
@@ -43,7 +43,7 @@ public:
     Node();
     Node(Type type, TockenRecord tockenRecord, deque<Node * > *  childern,Position pos);
     Node(Type type, TockenRecord tockenRecord, Position pos);
-
+    Node::Node (Type type, TockenRecord tockenRecord);
     void setType(Type type);
     void setTockenRecord(TockenRecord tockenRecord);
     void setChild(Node * child);
@@ -55,6 +55,8 @@ public:
     Node *getMyBro();
     Position getPos(); 
     void drawNode(Node * node);
+
+    void
 };
 
 #endif // NODE_H

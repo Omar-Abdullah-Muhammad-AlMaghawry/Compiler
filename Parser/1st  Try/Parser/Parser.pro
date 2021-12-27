@@ -11,11 +11,17 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    node.cpp
+    matchfn.cpp \
+    node.cpp \
+    prec.cpp \
+    tokenparser.cpp
 
 HEADERS += \
     mainwindow.h \
-    node.h
+    matchfn.h \
+    node.h \
+    prec.h \
+    tokenparser.h
 
 FORMS += \
     mainwindow.ui

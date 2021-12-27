@@ -7,5 +7,5 @@
 
 extern TockenRecord token;
 bool match(string expectedToken);
-
+void match();
 #endif
