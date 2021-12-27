@@ -1,5 +1,5 @@
 #include "node.h"
-
+Position posN ={90,190};
 Node::Node()
 {
 
