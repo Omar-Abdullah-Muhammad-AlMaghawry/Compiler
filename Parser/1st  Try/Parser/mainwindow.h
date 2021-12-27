@@ -9,10 +9,15 @@
 #include "QVBoxLayout"
 #include "QLabel"
 #include "qpainter.h"
+#include "QTextEdit"
+#include "string"
+#include "queue"
+#include "node.h"
+#include "iostream"
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 class QPushButton;
-
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
@@ -24,9 +29,11 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent * );
     void drawRec(int x, int y,int width,int hight,QColor color,QColor outterColor,QString seq);
+    void drawEllipse(int x, int y,int width,int hight,QColor color,QColor outterColor,QString seq);
     ~MainWindow();
 signals:
 public slots:void click_fn();
+    void parseScannerOutput(string code);
 private:
     Ui::MainWindow *ui;
     QPushButton * b ;
@@ -34,5 +41,6 @@ private:
     QPainter * paint;
     QLabel * label;
     QPen pen;
+    QTextEdit *textEdit;
 };
 #endif // MAINWINDOW_H

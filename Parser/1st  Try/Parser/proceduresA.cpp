@@ -4,13 +4,12 @@
 //Positions are implemented as a global variable
 
 
-void program_proc(){
-	stmtSeq_proc();
+Node* program_proc(){
+    return stmtSeq_proc();
 }
 
 Node* stmtSeq_proc(){
 	Node* first = stmt_proc();
-<<<<<<< HEAD
     Node * nextBro = first;
 	while(token.tt == SEMICOLON){
         match(SEMICOLON);
@@ -18,14 +17,6 @@ Node* stmtSeq_proc(){
         nextBro->setMyBro(temp);
 
         nextBro = nextBro->getMyBro();
-=======
-	Node * nextBro = first;
-	while(token.tt == SEMICOLON){
-		match(SEMCIOLON);
-		Node* temp = stmt_proc();
-		nextBro->setMyBro(&temp);
-		nextBro = nextBro->getMyBro();
->>>>>>> a1b36700f5aebebc7a73ac9c6a9b996741e0b964
 	}
 	return first;
 }
@@ -77,11 +68,7 @@ Node* assign_proc(){
     Node* identifier = new Node(Type::stmt, token, posN);
 	match(IDENTIFIER);
 	match(ASSIGN);
-<<<<<<< HEAD
     identifier->setChild(exp());
-=======
-	identifier->setChild(exp());
->>>>>>> a1b36700f5aebebc7a73ac9c6a9b996741e0b964
 	return identifier;
 }
 

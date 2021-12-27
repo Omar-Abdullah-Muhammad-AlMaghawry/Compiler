@@ -33,6 +33,8 @@ typedef struct {
 } Position ;
 //typedef stuct ;
 extern Position posN ;
+extern queue<TockenRecord> tokenQueue;
+
 class Node
 {
 private:

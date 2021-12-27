@@ -1,5 +1,7 @@
 #include "node.h"
 Position posN ={90,190};
+queue<TockenRecord> tokenQueue;
+
 Node::Node()
 {
 
@@ -59,7 +61,7 @@ Position Node::getPos(){
 void Node::drawNode(Node * node){
         switch (node->getType()){
         case stmt:
-            drawRec(this->getPos().x, this->getPos().y,100,50,Qt::white,Qt::black,node->getTockenRecord().val);
+            //drawRec(this->getPos().x, this->getPos().y,100,50,Qt::white,Qt::black,node->getTockenRecord().val);
         break;
         case expr:
             //drawOval();
