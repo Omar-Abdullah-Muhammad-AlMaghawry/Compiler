@@ -10,12 +10,12 @@ void program_proc(){
 
 Node* stmtSeq_proc(){
 	Node* first = stmt_proc();
-	Node * nextBro = &first;
-	bool first = true;
+	Node * nextBro = first;
 	while(token.tt == SEMICOLON){
+		match(SEMCIOLON);
 		Node* temp = stmt_proc();
 		nextBro->setMyBro(&temp);
-		nextBro = nextBro->getMyBro;
+		nextBro = nextBro->getMyBro();
 	}
 	return first;
 }
@@ -67,7 +67,7 @@ Node* assign_proc(){
 	Node* identifier = new Node(Type::stmt, token, pos);
 	match(IDENTIFIER);
 	match(ASSIGN);
-	identifier.setChild(exp());
+	identifier->setChild(exp());
 	return identifier;
 }
 
