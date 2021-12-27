@@ -6,9 +6,11 @@
 #include "deque"
 #include "mainwindow.h"
 using namespace std;
+
 typedef enum {
     stmt, expr
 } Type ;
+
 typedef enum {
     IF, THEN, ELSE , END, REPEAT, UNTIL,
     READ, WRITE,
@@ -24,6 +26,7 @@ typedef struct {
     TokenType tt;
     string val;
 } TockenRecord;
+
 typedef struct {
     int x;
     int y;

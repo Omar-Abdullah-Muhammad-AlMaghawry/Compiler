@@ -2,10 +2,10 @@
 
 TockenRecord token;
 
-bool match(string expectedToken){
-	if(expectedToken == token.val){
-		token = tokenQueue.front();
+bool match(TokenType expectedToken){
+	if(expectedToken == token.tt){
 		tokenQueue.pop();
+		token = tokenQueue.front();
 		return true;
 	}
 	else return false;

@@ -6,6 +6,6 @@
 #include "tokenparser.h"
 
 extern TockenRecord token;
-bool match(string expectedToken);
+bool match(TokenType expectedToken);
 
 #endif
