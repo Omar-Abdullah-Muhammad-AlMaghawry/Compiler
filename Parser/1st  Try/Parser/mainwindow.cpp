@@ -52,6 +52,7 @@ void MainWindow::drawRec(int x, int y,int width,int hight,QColor color,QColor ou
     paint->fillRect(rect,color);
     paint->drawRect(rect);
     paint->drawText(rect,Qt::AlignCenter,seq);
+
     //paint->drawText(rect,Qt::AlignCenter,QString::number(seq));
 }
 
