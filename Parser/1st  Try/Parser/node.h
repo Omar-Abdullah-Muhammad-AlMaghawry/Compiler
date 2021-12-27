@@ -46,7 +46,7 @@ public:
     Node();
     Node(Type type, TockenRecord tockenRecord, deque<Node * > *  childern,Position pos);
     Node(Type type, TockenRecord tockenRecord, Position pos);
-    Node::Node (Type type, TockenRecord tockenRecord);
+    Node (Type type, TockenRecord tockenRecord);
     void setType(Type type);
     void setTockenRecord(TockenRecord tockenRecord);
     void setChild(Node * child);
@@ -59,7 +59,7 @@ public:
     Position getPos(); 
     void drawNode(Node * node);
 
-    void
+
 };
 
 #endif // NODE_H

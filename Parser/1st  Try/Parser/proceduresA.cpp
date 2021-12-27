@@ -10,12 +10,13 @@ void program_proc(){
 
 Node* stmtSeq_proc(){
 	Node* first = stmt_proc();
-	Node * nextBro = &first;
-	bool first = true;
+    Node * nextBro = first;
 	while(token.tt == SEMICOLON){
+        match(SEMICOLON);
 		Node* temp = stmt_proc();
-		nextBro->setMyBro(&temp);
-		nextBro = nextBro->getMyBro;
+        nextBro->setMyBro(temp);
+
+        nextBro = nextBro->getMyBro();
 	}
 	return first;
 }
@@ -35,7 +36,7 @@ Node* stmt_proc(){
 		return read_proc();
 		break;
 	case WRITE:
-		return write();
+        return writeStmt();
 		break;
 	}
 }
@@ -55,26 +56,26 @@ Node* if_proc(){
 }
 
 Node* repeat_proc(){
-	Node* repeat_node = new Node(Type::stmt, token, pos);
+    Node* repeat_node = new Node(Type::stmt, token, posN);
 	match(REPEAT);
 	repeat_node->setChild(stmtSeq_proc());
 	match(UNTIL);
 	repeat_node->setChild(exp());
-	return repeat_node
+    return repeat_node;
 }
 
 Node* assign_proc(){
-	Node* identifier = new Node(Type::stmt, token, pos);
+    Node* identifier = new Node(Type::stmt, token, posN);
 	match(IDENTIFIER);
 	match(ASSIGN);
-	identifier.setChild(exp());
+    identifier->setChild(exp());
 	return identifier;
 }
 
 Node* read_proc(){
-	Node* read = new Node(Type::stmt, token, pos);
+    Node* read = new Node(Type::stmt, token, posN);
 	match(READ);
-	Node* identifier = new Node(Type::stmt, token, pos);
+    Node* identifier = new Node(Type::stmt, token, posN);
 	match(IDENTIFIER);
 	read->setChild(identifier);
 	return read;

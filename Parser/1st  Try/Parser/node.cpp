@@ -17,6 +17,11 @@ Node::Node (Type type, TockenRecord tockenRecord,Position pos){
     this->pos =pos;
     drawNode(this);
 }
+Node::Node (Type type, TockenRecord tockenRecord){
+    this->nodeType = type;
+    this->nodeRecord = tockenRecord;
+    drawNode(this);
+}
 void Node::setType(Type type){
     this->nodeType = type;
 }

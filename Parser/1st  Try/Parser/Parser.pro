@@ -13,14 +13,16 @@ SOURCES += \
     mainwindow.cpp \
     matchfn.cpp \
     node.cpp \
-    prec.cpp \
+    proc.cpp \
+    proceduresA.cpp \
     tokenparser.cpp
 
 HEADERS += \
     mainwindow.h \
     matchfn.h \
     node.h \
-    prec.h \
+    proc.h \
+    proceduresA.h \
     tokenparser.h
 
 FORMS += \

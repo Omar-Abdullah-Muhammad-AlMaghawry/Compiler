@@ -3,10 +3,15 @@
 TockenRecord token;
 
 bool match(TokenType expectedToken){
-	if(expectedToken == token.tt){
-		tokenQueue.pop();
-		token = tokenQueue.front();
-		return true;
-	}
-	else return false;
+    if(expectedToken == token.tt){
+        token = tokenQueue.front();
+        tokenQueue.pop();
+        token = tokenQueue.front();
+        return true;
+    }
+    else return false;
+}
+void match(){
+    tokenQueue.pop();
+    token =tokenQueue.front();
 }
