@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
     scrollAreaContent->setLayout( layout );
 
     QScrollArea* scrollArea = new QScrollArea;
+    scrollArea->setMinimumSize(600,700);
 //    QScrollBar* scrollBar = scrollArea->horizontalScrollBar();
     scrollArea->setWidgetResizable(false);
     scrollArea->setHorizontalScrollBarPolicy( Qt::ScrollBarAsNeeded );

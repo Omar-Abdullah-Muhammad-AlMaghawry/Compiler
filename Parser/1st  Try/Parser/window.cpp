@@ -5,9 +5,9 @@ Window::Window(QWidget *parent)
 {
 
     flag = false;
-
+    setBaseSize(600,700);
     b=new QPushButton("Run",this);
-    b->setGeometry(width()/8,height()-25,60,20);
+    b->setGeometry(width()/8 - 20,height()-25,60,20);
 
     textEdit= new QTextEdit(this);
     textEdit -> setGeometry(10,10,width()/4,height()-40);
@@ -61,7 +61,7 @@ void Window::drawTree(Node * node){
     posN.y+=70;
     for(int i=0;i<numOfChildren;i++){
         if(i!=0)
-            posN.x+=70;
+            posN.x+=80;
         drawLine(pChild.x,pChild.y,posN.x+30,posN.y,Qt::green);
         drawTree(node->getChild());
 
@@ -70,7 +70,7 @@ void Window::drawTree(Node * node){
 
     posN.y-=70;
     if(node->getMyBro()!=NULL){
-        posN.x+=70;
+        posN.x+=80;
         drawLine(pBro.x,pBro.y,posN.x,posN.y+25,Qt::green);
         drawTree(node->getMyBro());
     }
@@ -98,13 +98,13 @@ int Window::counterTree(Node * node){
 }
 void Window::paintEvent(QPaintEvent * ){
     paint = new QPainter(this);
-    setFixedSize(10000,10000);
+//    int widthX= posN.x;
+//    int heightY=posN.y;
+    setFixedSize(600-80+counter.x*80,500+counter.y*70);//10000
 //    paint->setClipping(false);//
 
     if(flag){
         drawTree(syntexTreeRoot);
-        int widthX= posN.x;
-        int heightY=posN.y;
         posN = start;
         parseScannerOutput((textEdit->toPlainText().toUtf8().constData()));
         token =tokenQueue.front();
