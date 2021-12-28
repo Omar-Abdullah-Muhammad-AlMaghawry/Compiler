@@ -28,9 +28,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 void MainWindow::click_fn(){
-    string x = tokenQueue.front().val;
-    label->setText(QString::fromStdString(x.c_str()));
-    tokenQueue.pop();
+
+    parseScannerOutput((textEdit->toPlainText().toUtf8().constData()));
+    token =tokenQueue.front();
+    Node * syntexTresRoot = program_proc();
+//    string x = tokenQueue.front().val;
+    label->setText(QString::fromStdString(tokenQueue.front().val));
+//    tokenQueue.pop();
 
     update();
 }
@@ -125,7 +129,7 @@ void  MainWindow::parseScannerOutput(string code) {
         else if (tempType == "GREATERTHAN") temp.tt = GREATERTHAN;
         else if (tempType == "OPENBRACKET") temp.tt = LEFTBRACKET;
         else if (tempType == "CLOSEDBRACKET") temp.tt = RIGHTBRACKET;
-        else if (tempType == "SENICOLON") temp.tt = SEMICOLON;
+        else if (tempType == "SEMICOLON") temp.tt = SEMICOLON;
         else if (tempType == "ASSIGN") temp.tt = ASSIGN;
         else if (tempType == "NUMBER") temp.tt = NUMBER;
         else if (tempType == "IDENTIFIER") temp.tt = IDENTIFIER;

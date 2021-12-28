@@ -14,6 +14,9 @@
 #include "queue"
 #include "node.h"
 #include "iostream"
+#include "proceduresA.h"
+#include "proc.h"
+
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -33,7 +36,7 @@ public:
     ~MainWindow();
 signals:
 public slots:void click_fn();
-    void parseScannerOutput(string code);
+public slots:void parseScannerOutput(string code);
 private:
     Ui::MainWindow *ui;
     QPushButton * b ;

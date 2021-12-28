@@ -4,7 +4,7 @@
 #include "string"
 #include "string.h"
 #include "deque"
-#include "mainwindow.h"
+#include "queue"
 using namespace std;
 
 typedef enum {
@@ -41,11 +41,11 @@ private:
     Type nodeType;
     TockenRecord nodeRecord;
     deque<Node * > *  childern = new deque<Node * >();
-    Node * myBro= new Node(); //pointer to the next sibling
+    Node * myBro; //pointer to the next sibling= new Node()
     Position pos;
 
 public:
-    Node();
+//    Node();
     Node(Type type, TockenRecord tockenRecord, deque<Node * > *  childern,Position pos);
     Node(Type type, TockenRecord tockenRecord, Position pos);
     Node (Type type, TockenRecord tockenRecord);

@@ -29,7 +29,7 @@ Node* stmt_proc(){
 	case REPEAT:
 		return repeat_proc();
 		break;
-	case ASSIGN:
+    case IDENTIFIER:
 		return assign_proc();
 		break;
 	case READ:
@@ -65,7 +65,7 @@ Node* repeat_proc(){
 }
 
 Node* assign_proc(){
-    Node* identifier = new Node(Type::stmt, token, posN);
+    Node* identifier = new Node(Type::stmt, {ASSIGN, "assign\n("+token.val+")"}, posN);
 	match(IDENTIFIER);
 	match(ASSIGN);
     identifier->setChild(exp());

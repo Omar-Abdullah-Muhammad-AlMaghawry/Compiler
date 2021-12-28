@@ -2,10 +2,10 @@
 Position posN ={90,190};
 queue<TockenRecord> tokenQueue;
 
-Node::Node()
-{
+//Node::Node()
+//{
 
-}
+//}
 Node::Node (Type type, TockenRecord tockenRecord, deque<Node * > *  childern,Position pos){
     this->nodeType = type;
     this->nodeRecord = tockenRecord;//val = tocken (read)+ "\n" +"("+tocken(x)+")"

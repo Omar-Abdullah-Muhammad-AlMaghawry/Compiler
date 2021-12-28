@@ -3,6 +3,7 @@
 Node * writeStmt(){
     Node * tempNode;
     tempNode = new Node(stmt, token,posN);
+    match(WRITE);
     tempNode->setChild(exp());
     return tempNode;
 }
@@ -10,7 +11,7 @@ Node * exp(){
     Node *  tempNode, *newTempNode;
     tempNode = simpleExp();
     if(token.val == "<"||token.val == "="){
-        newTempNode = new Node(expr,token,posN);
+        newTempNode = new Node(expr,{token.tt,"op\n("+token.val+")"},posN);//token
         match();
         newTempNode->setChild(tempNode);
         newTempNode->setChild(simpleExp());
@@ -28,7 +29,7 @@ Node * simpleExp(){
     tempNode = term();
     //parent = tempNode;
     while(token.tt == PLUS|| token.tt  == MINUS){
-        newTempNode = new Node(stmt,token,{posN});
+        newTempNode = new Node(stmt,{token.tt,"op\n("+token.val+")"},{posN});//token
         if (token.tt == PLUS)
             match(PLUS);
         else if(token.tt == MINUS)
@@ -49,7 +50,7 @@ Node * term(){
     tempNode = factor();
     //parent = tempNode;
     while(token.tt == MUL|| token.tt  == DIVIDE){
-        newTempNode = new Node(stmt,token,{posN});
+        newTempNode = new Node(stmt,{token.tt,"op\n("+token.val+")"},{posN});//
         if (token.tt == MUL)
             match(MUL);
         else if(token.tt == DIVIDE)
