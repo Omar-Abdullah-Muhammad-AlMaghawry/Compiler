@@ -33,6 +33,8 @@ public:
     void paintEvent(QPaintEvent * );
     void drawRec(int x, int y,int width,int hight,QColor color,QColor outterColor,QString seq);
     void drawEllipse(int x, int y,int width,int hight,QColor color,QColor outterColor,QString seq);
+    void drawNode(Node * node,Position posD);
+    void drawTree(Node * node);
     ~MainWindow();
 signals:
 public slots:void click_fn();
@@ -44,6 +46,8 @@ private:
     QPainter * paint;
     QLabel * label;
     QPen pen;
+    bool flag;
     QTextEdit *textEdit;
+    Node * syntexTreeRoot;
 };
 #endif // MAINWINDOW_H

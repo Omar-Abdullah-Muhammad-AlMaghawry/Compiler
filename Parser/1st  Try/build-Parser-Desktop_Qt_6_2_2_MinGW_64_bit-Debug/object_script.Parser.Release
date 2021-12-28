@@ -1,0 +1,10 @@
+release/main.o
+release/mainwindow.o
+release/matchfn.o
+release/node.o
+release/proc.o
+release/proceduresA.o
+release/tokenparser.o
+release/window.o
+release/moc_mainwindow.o
+release/moc_window.o

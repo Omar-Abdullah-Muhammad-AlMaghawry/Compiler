@@ -73,10 +73,10 @@ Node* assign_proc(){
 }
 
 Node* read_proc(){
-    Node* read = new Node(Type::stmt, token, posN);
 	match(READ);
-    Node* identifier = new Node(Type::stmt, token, posN);
+    Node* read = new Node(Type::stmt, {READ, "read\n("+token.val+")"} , posN);//token
+//    Node* identifier = new Node(Type::stmt, token, posN);
 	match(IDENTIFIER);
-	read->setChild(identifier);
+//	read->setChild(identifier);
 	return read;
 }

@@ -41,7 +41,7 @@ private:
     Type nodeType;
     TockenRecord nodeRecord;
     deque<Node * > *  childern = new deque<Node * >();
-    Node * myBro; //pointer to the next sibling= new Node()
+    Node * myBro=NULL; //pointer to the next sibling= new Node()
     Position pos;
 
 public:
@@ -59,7 +59,8 @@ public:
     Node *getChild();
     Node *getMyBro();
     Position getPos(); 
-    void drawNode(Node * node);
+    int getNumChildren();
+//    void drawNode(Node * node);
 
 
 };

@@ -11,18 +11,18 @@ Node::Node (Type type, TockenRecord tockenRecord, deque<Node * > *  childern,Pos
     this->nodeRecord = tockenRecord;//val = tocken (read)+ "\n" +"("+tocken(x)+")"
     this->childern = childern;
     this->pos = pos;
-    drawNode(this);
+//    drawNode(this);
 }
 Node::Node (Type type, TockenRecord tockenRecord,Position pos){
     this->nodeType = type;
     this->nodeRecord = tockenRecord;
     this->pos =pos;
-    drawNode(this);
+//    drawNode(this);
 }
 Node::Node (Type type, TockenRecord tockenRecord){
     this->nodeType = type;
     this->nodeRecord = tockenRecord;
-    drawNode(this);
+//    drawNode(this);
 }
 void Node::setType(Type type){
     this->nodeType = type;
@@ -38,7 +38,7 @@ void Node::setMyBro(Node * bro){
 }
 void Node::setPos(Position p){
     this->pos=p;
-    drawNode(this);
+//    drawNode(this);
 }
 Type Node::getType(){
     return nodeType;
@@ -51,6 +51,9 @@ Node * Node::getChild(){
     childern->pop_front();
     return temp;
 }
+int Node::getNumChildren(){
+    return childern->size();
+}
 Node *  Node::getMyBro(){
     return myBro;
 }
@@ -58,13 +61,4 @@ Position Node::getPos(){
     return pos;
 }
 
-void Node::drawNode(Node * node){
-        switch (node->getType()){
-        case stmt:
-            //drawRec(this->getPos().x, this->getPos().y,100,50,Qt::white,Qt::black,node->getTockenRecord().val);
-        break;
-        case expr:
-            //drawOval();
-          break;
-        }
-}
+

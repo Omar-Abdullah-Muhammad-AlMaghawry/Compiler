@@ -15,7 +15,8 @@ SOURCES += \
     node.cpp \
     proc.cpp \
     proceduresA.cpp \
-    tokenparser.cpp
+    tokenparser.cpp \
+    window.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -23,7 +24,8 @@ HEADERS += \
     node.h \
     proc.h \
     proceduresA.h \
-    tokenparser.h
+    tokenparser.h \
+    window.h
 
 FORMS += \
     mainwindow.ui
