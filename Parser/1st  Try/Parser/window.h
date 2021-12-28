@@ -34,7 +34,7 @@ public:
     void drawNode(Node * node,Position posD);
     void drawTree(Node * node);
     void drawLine(int stX, int stY,int enX,int enY,QColor color);
-    void counterTree(Node * node);
+    int counterTree(Node * node);
 signals:
 public slots:void click_fn();
 public slots:void parseScannerOutput(string code);

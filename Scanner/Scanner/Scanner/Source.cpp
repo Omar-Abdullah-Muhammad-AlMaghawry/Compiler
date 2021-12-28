@@ -310,67 +310,67 @@ int main() {
 	{
 		switch ((outputQueue->front()).tt){
 			case IF:
-				outputFile << (outputQueue->front()).val << " , " << "if" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "IF" << "\n";
 				break;
 			case THEN:
-				outputFile << (outputQueue->front()).val << " , " << "then" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "THEN" << "\n";
 				break;
 			case ELSE:
-				outputFile << (outputQueue->front()).val << " , " << "else" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "ELSE" << "\n";
 				break;
 			case END:
-				outputFile << (outputQueue->front()).val << " , " << "end" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "END" << "\n";
 				break;
 			case REPEAT:
-				outputFile << (outputQueue->front()).val << " , " << "repeat" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "REPEAT" << "\n";
 				break;
 			case UNTIL:
-				outputFile << (outputQueue->front()).val << " , " << "until" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "UNTIL" << "\n";
 				break;
 			case READ:
-				outputFile << (outputQueue->front()).val << " , " << "read" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "READ" << "\n";
 				break;
 			case WRITE:
-				outputFile << (outputQueue->front()).val << " , " << "write" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "WRITE" << "\n";
 				break;
 			case PLUS:
-				outputFile << (outputQueue->front()).val << " , " << "plus" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "PLUS" << "\n";
 				break;
 			case MINUS: 
-				outputFile << (outputQueue->front()).val << " , " << "minus" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "MINUS" << "\n";
 				break;
 			case MUL:
-				outputFile << (outputQueue->front()).val << " , " << "multiplication" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "MULT" << "\n";
 				break;
 			case DIVIDE:
-				outputFile << (outputQueue->front()).val << " , " << "divide" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "DIV" << "\n";
 				break;
 			case EQUAL:
-				outputFile << (outputQueue->front()).val << " , " << "equal" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "EQUAL" << "\n";
 				break;
 			case LESSTHAN:
-				outputFile << (outputQueue->front()).val << " , " << "less than" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "LESSTHAN" << "\n";
 				break;
 			case GREATERTHAN:
-				outputFile << (outputQueue->front()).val << " , " << "greater than" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "GREATERTHAN" << "\n";
 				break;
 			case LEFTBRACKET:
-				outputFile << (outputQueue->front()).val << " , " << "left bracket" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "OPENBRACKET" << "\n";
 				break;
 			case RIGHTBRACKET:
-				outputFile << (outputQueue->front()).val << " , " << "right bracket" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "CLOSEDBRACKET" << "\n";
 				break;
 			case SEMICOLON:
-				outputFile << (outputQueue->front()).val << " , " << "semicolon" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "SEMICOLON" << "\n";
 				break;
 			case ASSIGN:
-				outputFile << (outputQueue->front()).val << " , " << "assign" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "ASSIGN" << "\n";
 				break;
 			case NUMBER:
-				outputFile << (outputQueue->front()).val << " , " << "number" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "NUMBER" << "\n";
 				break;
 			case IDENTIFIER:
-				outputFile << (outputQueue->front()).val << " , " << "identifier" << "\n";
+				outputFile << (outputQueue->front()).val << "," << "IDENTIFIER" << "\n";
 				break;
 		}
 		outputQueue->pop();

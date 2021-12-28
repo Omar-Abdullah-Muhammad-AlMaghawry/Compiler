@@ -35,10 +35,12 @@ void Window::click_fn(){
 
 //    label->setText(QString::fromStdString((counter.x)+":"+(counter.y)));
 //    tokenQueue.pop();
+    counterTree(syntexTreeRoot);
+    parseScannerOutput((textEdit->toPlainText().toUtf8().constData()));
+    token =tokenQueue.front();
+    syntexTreeRoot = program_proc();
     flag = true;
-
     this->update();
-//    counterTree(syntexTreeRoot);
 
 }
 void Window::drawNode(Node * node,Position posD){
@@ -73,23 +75,26 @@ void Window::drawTree(Node * node){
         drawTree(node->getMyBro());
     }
 }
-void Window::counterTree(Node * node){
+int Window::counterTree(Node * node){
+    int y = 0;
+    int temp = 0;
     int numOfChildren = node->getNumChildren();
     for(int i=0;i<numOfChildren;i++){
-//        if(i==0)
-//           counter.y++;
-
         if(i==0&&numOfChildren>0)
             counter.x +=numOfChildren-1;
-        counterTree(node->getChild());
-//        posN.x+=70;
+        temp = counterTree(node->getChild());
+        if(temp>y) y =temp;
+        //        posN.x+=70;
     }
-
+    y++;
     if(node->getMyBro()!=NULL){
-        counter.x++;
-        counter.y++;
-        counterTree(node->getMyBro());
+        counter.x ++;
+        temp = counterTree(node->getMyBro());
+        if(temp>y) y =temp;
+///*       counter.y =(counterTree(node->getMyBro())>counter.y)?counterTree(node->getM*/yBro()):counter.y;
     }
+    counter.y = y;
+    return y;
 }
 void Window::paintEvent(QPaintEvent * ){
     paint = new QPainter(this);
@@ -101,7 +106,9 @@ void Window::paintEvent(QPaintEvent * ){
         int widthX= posN.x;
         int heightY=posN.y;
         posN = start;
-
+        parseScannerOutput((textEdit->toPlainText().toUtf8().constData()));
+        token =tokenQueue.front();
+        syntexTreeRoot = program_proc();
 //        this ->setGeometry(0,0,widthX,heightY);
 
 //        for(int i = 0;i<20;i++)
