@@ -47,7 +47,7 @@ void Window::drawNode(Node * node,Position posD){
             drawRec(posD.x, posD.y,60,50,Qt::white,Qt::black,QString::fromStdString(node->getTockenRecord().val));
         break;
         case expr:
-            drawEllipse(posD.x, posD.y,60,50,Qt::white,Qt::black,QString::fromStdString(node->getTockenRecord().val));
+            drawEllipse(posD.x, posD.y,60,50,Qt::white,Qt::blue,QString::fromStdString(node->getTockenRecord().val));
           break;
         }
 }
